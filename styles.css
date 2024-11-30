@@ -151,3 +151,17 @@ body {
         gap: 2rem;
     }
 }
+
+.left-navbar {
+    display: flex;
+
+}
+
+.left-navbar ul {
+    display: flex;
+    list-style-type: none;
+}
+
+.left-navbar > li {
+    text-decoration: none;
+}
