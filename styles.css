@@ -23,13 +23,12 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     z-index: 1000;
 }
 
 .logo-img {
-    height: 40px;
+    height: 55px;
 }
 
 .nav-links {
@@ -154,14 +153,47 @@ body {
 
 .left-navbar {
     display: flex;
-
 }
 
 .left-navbar ul {
     display: flex;
     list-style-type: none;
+    align-items: center;
+    gap: 3rem;
+    margin-left: 2rem;
 }
 
 .left-navbar > li {
     text-decoration: none;
+}
+
+.link {
+    font-size: 1.2rem;
+    color: #cfcece;
+    text-decoration: none;
+}
+
+.link:hover {
+    color: #ffd700;
+}
+
+.navbar-translate-svg {
+    width: 27px;
+    height: 27px;
+}
+
+.flag-arg-svg {
+    width: 27px;
+    height: 27px;
+}
+
+.navbar-arrow-down-svg {
+    width: 27px;
+    height: 27px;
+}
+
+.right-navbar {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
 }
