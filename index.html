@@ -9,10 +9,38 @@
 <body>
     <header>
         <nav class="navbar">
-            <div class="left-navbar">
-                <img src="/coscu_army_awards-icon (1).svg" alt="CA Awards Logo" class="logo-img">
-                <ul>
-                    <li class="">
+            <div class="nav-container">
+                <!-- Logo y links de navegación (desktop) -->
+                <div class="left-section">
+                    <img src="/coscu_army_awards-icon (1).svg" alt="CA Awards Logo" class="logo-img">
+                    <ul class="desktop-menu">
+                        <li>
+                            <a href="#acerca" class="link">Acerca de</a>
+                        </li>
+                        <li>
+                            <a href="#picantes" class="link">Picantes</a>
+                        </li>
+                        <li>
+                            <a href="#ternas" class="link">Ternas 2023</a>
+                        </li>
+                        <li>
+                            <a href="#sponsors" class="link">Sponsors 2023</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Hamburger (solo mobile) -->
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+
+            <!-- Menú mobile -->
+            <div class="mobile-menu">
+                <ul class="menu-items">
+                    <li>
                         <a href="#acerca" class="link">Acerca de</a>
                     </li>
                     <li>
@@ -24,8 +52,21 @@
                     <li>
                         <a href="#sponsors" class="link">Sponsors 2023</a>
                     </li>
+                    <li class="mobile-right-items">
+                        <div class="right-item">
+                            <img src="assets/translate.svg" class="navbar-translate-svg">
+                        </div>
+                        <div class="right-item">
+                            <img src="assets/flag-arg.svg" class="flag-arg-svg">
+                        </div>
+                        <div class="right-item">
+                            <img src="assets/arrow-up.svg" class="navbar-arrow-down-svg">
+                        </div>
+                    </li>
                 </ul>
             </div>
+
+            <!-- Right navbar (desktop) -->
             <ul class="right-navbar">
                 <div>
                     <img src="assets/translate.svg" class="navbar-translate-svg">
@@ -34,26 +75,29 @@
                     <img src="assets/flag-arg.svg" class="flag-arg-svg">
                 </div>
                 <div style="color: blue">
-                    <img src="assets/arrow-down.svg" class="navbar-arrow-down-svg">
+                    <img src="assets/arrow-up.svg" class="navbar-arrow-down-svg">
                 </div>
             </ul>
         </nav>
+        <div class="overlay"></div>
     </header>
 
     <main>
         <section class="hero">
             <div class="hero-content">
-                <img src="https://media.discordapp.net/attachments/1298765481691320426/1310732484375478323/image-removebg-preview_1.png?ex=674b9040&is=674a3ec0&hm=0bf077f726391062cdc0b08d8903b3969c2e051b2af05b8f50bc2760eecdbcf7&=&format=webp&quality=lossless" alt="Picantito de oro">
-                <h1>COSCU ARMY AWARDS</h1>
-                <p>Premios a la comunidad de streamers de <span class="argentina">Argentina</span></p>
+                <div>
+                    <img src="https://media.discordapp.net/attachments/1298765481691320426/1310732484375478323/image-removebg-preview_1.png?ex=674b9040&is=674a3ec0&hm=0bf077f726391062cdc0b08d8903b3969c2e051b2af05b8f50bc2760eecdbcf7&=&format=webp&quality=lossless" alt="Picantito de oro" class="">
+                </div>
+                <h1 class="title">COSCU ARMY AWARDS</h1>
+                <p class="description">Premios a la comunidad de streamers de <span class="argentina">Argentina</span></p>
                 <button class="cta-button">Saber más ▼</button>
 
                 <section class="sponsors">
                     <h2>Patrocinadores</h2>
                     <div class="sponsor-logos">
-                        <img src="/placeholder.svg?height=30&width=30" alt="Kick" class="sponsor-logo">
-                        <img src="/placeholder.svg?height=30&width=30" alt="McDonald's" class="sponsor-logo">
-                        <img src="/placeholder.svg?height=30&width=30" alt="Spotify" class="sponsor-logo">
+                        <div><img src="/placeholder.svg?height=30&width=30" alt="Kick" class="sponsor-logo"></div>
+                        <div><img src="/placeholder.svg?height=30&width=30" alt="McDonald's" class="sponsor-logo"></div>
+                        <div><img src="/placeholder.svg?height=30&width=30" alt="Spotify" class="sponsor-logo"></div>
                     </div>
                 </section>
             </div>
@@ -61,5 +105,7 @@
 
         
     </main>
+
+    <script type="module" src="./index.js"></script>
 </body>
 </html>
