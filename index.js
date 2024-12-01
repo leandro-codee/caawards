@@ -8,7 +8,7 @@ hamburger.addEventListener('click', () => {
     overlay.classList.toggle('active');
 });
 
-// Close menu when clicking on a link or overlay
+// cierra el menu cuando clickeas :v
 const navLinks = document.querySelectorAll('.link');
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
