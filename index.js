@@ -1,4 +1,4 @@
-// NAVBAR MENU HAMBURGESA
+// Navbar Menu Hamburger
 
 const hamburger = document.querySelector('.hamburger');
 const mobileMenu = document.querySelector('.mobile-menu');
@@ -28,7 +28,7 @@ overlay.addEventListener('click', () => {
 // Funcionalidad de tradución
 
 i18next.init({
-    lng: 'en',
+    lng: 'es',
     debug: true,
     interpolation: {
         escapeValue: false
@@ -84,69 +84,28 @@ document.querySelectorAll('[data-id="sponsors-link"]').forEach(element => {
     element.innerHTML = i18next.t('sponsors') + ' 2023';
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    const dropdownTrigger = document.querySelectorAll('.dropdown-trigger');
-    const dropdownContent = document.querySelectorAll('.dropdown-content');
-    const arrowIcon = document.querySelectorAll('.navbar-arrow-svg');
+document.addEventListener('languageChange', (e) => {
+    const { language, flagSrc } = e.detail;
 
-    dropdownTrigger.forEach((el) => {
-        el.addEventListener('click', function(e) {
-            dropdownContent.forEach((element) => {
-                element.classList.toggle('show');
-                arrowIcon.classList.toggle('rotated');
-            })
-            e.stopPropagation();
-        })
-    })
+    i18next.changeLanguage(language, (err, t) => {
+        if (err) return console.log('Error changing language', err);
 
-    document.addEventListener('click', function(e) {
-        if (!dropdownTrigger.contains(e.target)) {
-            dropdownContent.classList.remove('show');
-            arrowIcon.classList.remove('rotated');
-        }
+        document.querySelectorAll('[data-id]').forEach(element => {
+            const id = element.dataset.id;
+            if (id === 'subtitle') {
+                const translated = t(id, {
+                    country: "<span class='argentina'>Argentina</span>"
+                });
+                element.innerHTML = translated;
+            } else if (id === 'sponsors-link') {
+                element.innerHTML = t('sponsors') + ' 2023';
+            } else {
+                element.innerHTML = t(id);
+            }
+        });
     });
 
-    const languageOptions = document.querySelectorAll('.language-option');
-    languageOptions.forEach(option => {
-        option.addEventListener('click', function() {
-            const isUSFlag = this.querySelector('img').src.includes('usa');
-            const newLanguage = isUSFlag ? 'en' : 'es';
-
-            i18next.changeLanguage(newLanguage, (err, t) => {
-                if (err) return console.log('Error changing language', err);
-
-                document.querySelectorAll('[data-id="about"]').forEach(element => {
-                    element.innerHTML = t(element.dataset.id);
-                });
-
-                document.querySelectorAll('[data-id="sponsors"]').forEach(element => {
-                    element.innerHTML = t(element.dataset.id);
-                });
-
-                document.querySelectorAll('[data-id="subtitle"]').forEach(element => {
-                    const translated = t(element.dataset.id, {
-                        country: "<span class='argentina'>Argentina</span>"
-                    });
-                    element.innerHTML = translated;
-                });
-
-                document.querySelectorAll('[data-id="more-info"]').forEach(element => {
-                    element.innerHTML = t(element.dataset.id);
-                });
-
-                document.querySelectorAll('[data-id="sponsors-link"]').forEach(element => {
-                    element.innerHTML = t('sponsors') + ' 2023';
-                });
-            });
-
-            const selectedFlag = this.querySelector('img').src;
-            document.querySelector('.flag-svg').src = selectedFlag;
-
-            dropdownContent.forEach((drop) => {
-                drop.classList.remove('show');
-            })
-
-            arrowIcon.classList.remove('rotated');
-        });
+    document.querySelectorAll('.flag-svg').forEach(flag => {
+        flag.src = flagSrc;
     });
 });

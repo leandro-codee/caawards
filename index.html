@@ -6,6 +6,7 @@
     <title>Coscu Army Awards</title>
     <link rel="stylesheet" href="styles.css">
     <script type="module" src="https://cdnjs.cloudflare.com/ajax/libs/i18next/24.0.2/i18next.min.js"></script>
+    <script type="module" src="./language-dropdown.js"></script>
 </head>
 <body>
     <header>
@@ -57,21 +58,9 @@
                         <div class="right-item">
                             <img src="assets/flag-arg.svg" class="flag-svg">
                         </div>
-                        <div class="language-dropdown">
-                            <div class="dropdown-trigger" style="color: blue">
-                                <img src="assets/arrow-up.svg" class="navbar-arrow-svg">
-                            </div>
-                            <div class="dropdown-content">
-                                <div class="language-option">
-                                    <img src="assets/flag-arg.svg" alt="Argentina">
-                                    <span>Español</span>
-                                </div>
-                                <div class="language-option">
-                                    <img src="assets/flag-usa.svg" alt="United States">
-                                    <span>English</span>
-                                </div>
-                            </div>
-                        </div>
+                        <language-dropdown>
+                            <img slot="arrow-icon" src="assets/arrow-up.svg" class="navbar-arrow-svg">
+                        </language-dropdown>
                     </li>
                 </ul>
             </div>
@@ -83,21 +72,9 @@
                 <div>
                     <img src="assets/flag-arg.svg" class="flag-svg">
                 </div>
-                <div class="language-dropdown">
-                    <div class="dropdown-trigger" style="color: blue">
-                        <img src="assets/arrow-up.svg" class="navbar-arrow-svg">
-                    </div>
-                    <div class="dropdown-content">
-                        <div class="language-option">
-                            <img src="assets/flag-arg.svg" alt="Argentina">
-                            <span>Español</span>
-                        </div>
-                        <div class="language-option">
-                            <img src="assets/flag-usa.svg" alt="United States">
-                            <span>English</span>
-                        </div>
-                    </div>
-                </div>
+                <language-dropdown>
+                    <img slot="arrow-icon" src="assets/arrow-up.svg" class="navbar-arrow-svg">
+                </language-dropdown>
             </ul>
         </nav>
         <div class="overlay"></div>
